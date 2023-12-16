@@ -4,12 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register With Us</title>
+    <title>Create A Topic</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+	<script src="js/ckeditor/ckeditor.js"></script>
   </head>
 
   <body>
@@ -23,14 +26,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Forum</a>
+          <a class="navbar-brand" href="index.php">Forum</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="register.html">Register</a></li>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="create.html">Create Topic</a></li>
+            <li class="active"><a href="index.php">Home</a></li>
+            <li><a href="register.php">Register</a></li>
+            <li><a href="create.php">Create Topic</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -41,30 +43,38 @@
 			<div class="col-md-8">
 				<div class="main-col">
 					<div class="block">
-						<h1 class="pull-left">Register</h1>
+						<h1 class="pull-left">Create A Topic</h1>
 						<h4 class="pull-right">A Simple Forum</h4>
 						<div class="clearfix"></div>
 						<hr>
-						<form role="form" enctype="multipart/form-data" method="post" action="register.php">
-							
+						<form role="form">
 							<div class="form-group">
-							<label>Email Address*</label> <input type="email" class="form-control"
-							name="email" placeholder="Enter Your Email Address">
+								<label>Topic Title</label>
+								<input type="text" class="form-control" name="title" placeholder="Enter Post Title">
 							</div>
-					
-					<div class="form-group">
-                        <label>Password*</label> <input type="password" class="form-control"
-                    name="password" placeholder="Enter A Password">
-                    </div>
-	
-			        <input name="register" type="submit" class="color btn btn-default" value="Register" />
-        </form>
+							<div class="form-group">
+								<label>Category</label>
+								<select class="form-control">
+									<option>Design</option>
+									<option>Development</option>
+									<option>Business & Marketing</option>
+									<option>Search Engines</option>
+									<option>Cloud & Hosting</option>
+							</select>
+							</div>
+								<div class="form-group">
+									<label>Topic Body</label>
+									<textarea id="body" rows="10" cols="80" class="form-control" name="body"></textarea>
+									<script>CKEDITOR.replace('body');</script>
+								</div>
+							<button type="submit" class="color btn btn-default">Submit</button>
+						</form>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4">
 				<div id="sidebar">
-				
+			
 					
 					<div class="block">
 					<h3>Categories</h3>
@@ -81,12 +91,6 @@
 			</div>
 		</div>
     </div><!-- /.container -->
-
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/bootstrap.js"></script>
+    
   </body>
 </html>
